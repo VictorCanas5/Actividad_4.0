@@ -1,4 +1,4 @@
-.redondeado{
+#redondeado{
     margin-top: 2px;
     border-top-left-radius: 37px;
     border-top-right-radius: 37px;
@@ -12,14 +12,6 @@
 .navli{
     margin-left: 50pt;
 }
-.btn-acceder{
-text-decoration: none;
-color: white;
-}
-.btn-acceder:hover{
-    color: black;
-}
-/*Fin de los estilos propios del NavBar*/
 .jumbotronfm{
     background-color: rgb(48, 193, 82);
     color: white;
@@ -60,3 +52,14 @@ padding: 15px;
 display:flex;
 margin:0 auto;
 }
+
+.btn-acceder{
+    text-decoration: none;
+    color: white;
+}
+.btn-acceder:hover{
+    color: black;
+}
+.body-g{
+    background-color: rgb(40, 80, 36);
+    }
