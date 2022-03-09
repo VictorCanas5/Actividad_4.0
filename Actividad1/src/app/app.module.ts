@@ -9,6 +9,9 @@ import { RegisterComponent } from './logeo/pages/register/register.component';
 import { LoginComponent } from './logeo/pages/login/login.component';
 import { HeaderComponent } from './index/components/header/header.component';
 import { FooterComponent } from './index/components/footer/footer.component';
+import { ServiciosComponent } from './index/pages/servicios/servicios.component';
+import { Error404Component } from './errores/pages/error404/error404.component';
+
 
 
 
@@ -20,7 +23,10 @@ import { FooterComponent } from './index/components/footer/footer.component';
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ServiciosComponent,
+    Error404Component,
+  
   ],
   imports: [
     BrowserModule,
