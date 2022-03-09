@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      .text-decn{
+        text-decoration: none;
+        color:#1b262c;
+      }
+      
+    </style>
+    <title>Registrarse</title>
+  </head>
+  <body class="body-g">
+<div id="contenedor">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Llena el formulario para registrarte
+            </div>
+            <form id="loginform" action="../Scripts/registroCompleto.php" method="POST">
+              <div class="row">
+                <div class="col">
+                <input type="text" name="nombre" placeholder="Escribe tu nombre" required autofocus>
+                
+                <input type="text" placeholder="Escribe tu apellido paterno" name="ap_paterno" required>
+  
+                <input type="text" placeholder="Escribe tu apellido materno" name="ap_materno" required>
+              </div>
+              <div class="col">
+                <input type="text" placeholder="Escribe tu nombre de usuario" name="usuario" required>
+  
+                <input type="text" placeholder="Escribe tu correo" name="correo" required>
+  
+                <input type="password" placeholder="Escribe una contraseña" name="contraseña" required>
+              </div>
+                <button type="submit" name="registrar">Siguiente</button>
+              </div>
+            </form>
+        </div>
+        <div class="inferior">
+            <a href="../inicio/index copy.html">Volver a inicio</a>
+        </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+      <!---->
+      <!-- #region js-->
+      <script src="inicio/js/bootstrap.min.js"></script>
+      <!-- #endregion -->
+    </body>
+  </html>
