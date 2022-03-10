@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './pages/index/index.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { IndexRoutingModule } from './index-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    
+   /*ruteador*/ IndexRoutingModule,
    
   ],
   exports:[
