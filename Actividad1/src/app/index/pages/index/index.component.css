@@ -64,3 +64,23 @@ html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
+.html {
+    margin: 2rem auto;
+    border: 1px solid #aaa;
+    height: 300px;
+    width:90%;
+    max-width: 400px;
+    background: #f1f2f3;
+    overflow:auto;
+    box-sizing: border-box;
+    padding:0 1rem;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+body::-webkit-scrollbar{
+    width: 7px;
+}
+body::-webkit-scrollbar{
+    background: gray;
+}

@@ -11,8 +11,12 @@ const routes: Routes = [
     {path:'inicio',component: IndexComponent},
     {path:'login', component: LoginComponent},
     {path:'servicios', component:ServiciosComponent},
-    {path:'**', component: Error404Component },
     {path:'registrarse', component:RegisterComponent},
+    
+
+//errores
+    {path:'**', component: Error404Component }
+    
     
     
 ];
