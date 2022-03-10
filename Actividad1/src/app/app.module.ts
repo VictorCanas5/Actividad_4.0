@@ -15,7 +15,6 @@ import { LogeoModule } from './logeo/logeo.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
     ServiciosComponent,
    
   ],

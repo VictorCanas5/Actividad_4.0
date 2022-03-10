@@ -17,7 +17,8 @@ const routes: Routes = [
       loadChildren: ()=> import('./logeo/logeo.module').then( m=> m.LogeoModule )
     },
     {
-      path: '**', redirectTo:'inicio'
+      path: '**', 
+      redirectTo:'inicio'
     }
 
    
@@ -27,7 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-  LogeoModule,
+ 
   ],
   exports: [
     RouterModule

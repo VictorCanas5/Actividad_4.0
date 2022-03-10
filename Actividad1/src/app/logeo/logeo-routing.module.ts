@@ -6,14 +6,15 @@ import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
 
-{
-  path: '',
-  children:[
-    {path:'login', component: LoginComponent},
-    {path:'registrarse', component:RegisterComponent},
-    {path: '**',redirectTo: 'login', pathMatch:'full'},
-  ]
-}
+  {
+    path: '',
+    children:[
+      {path:'login', component: LoginComponent},
+      {path:'registrarse', component:RegisterComponent},
+      {path: '**',redirectTo: 'login'},
+      
+    ]
+  }
 
 ];
 

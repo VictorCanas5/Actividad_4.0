@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 //pages
 import { IndexComponent } from './pages/index/index.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
+
 const routes: Routes = [
 
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
     children:[
       {path:'index',component: IndexComponent},
       {path:'servicios', component:ServiciosComponent},
-      {path: '**',redirectTo: 'index', pathMatch:'full'},
+      {path: '**',redirectTo: 'index'},
     ]
   }
   

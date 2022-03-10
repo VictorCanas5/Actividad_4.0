@@ -12,8 +12,9 @@ import { LogeoRoutingModule } from './logeo-routing.module';
   ],
   imports: [
     CommonModule,
+    LogeoRoutingModule,
     IndexModule,
-   LogeoRoutingModule,
+   
   ],
   exports:[
     RegisterComponent,
