@@ -17,6 +17,10 @@ const routes: Routes = [
       loadChildren: ()=> import('./logeo/logeo.module').then( m=> m.LogeoModule )
     },
     {
+      path: 'citas',
+      loadChildren: ()=> import('./citas/citas.module').then(m=>m.CitasModule)
+    },
+    {
       path: '**', 
       redirectTo:'inicio'
     }
