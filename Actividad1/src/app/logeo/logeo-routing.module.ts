@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     children:[
-      {path:'login', component: LoginComponent, canActivate:[AuthGuardGuard]},
+      {path:'login', component: LoginComponent},
       {path:'registrarse', component:RegisterComponent},
       {path: '**',redirectTo: 'login'},
       
