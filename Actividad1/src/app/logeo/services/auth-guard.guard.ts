@@ -24,7 +24,8 @@ export class AuthGuardGuard implements CanActivate, CanActivateChild, CanDeactiv
     
     UrlTree {
       const cookie= this.cookieService.check('token_access');
-    return true;
+      this.redirect(cookie);
+    return cookie;
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
