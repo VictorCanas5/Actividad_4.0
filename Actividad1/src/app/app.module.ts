@@ -10,12 +10,16 @@ import { ServiciosComponent } from './index/pages/servicios/servicios.component'
 import { IndexModule } from './index/index.module';
 import { ErroresModule } from './errores/errores.module';
 import { LogeoModule } from './logeo/logeo.module';
+//cookies
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ServiciosComponent,
+   
    
   ],
   imports: [
@@ -26,7 +30,7 @@ import { LogeoModule } from './logeo/logeo.module';
     LogeoModule
     
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CookieService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
