@@ -5,7 +5,7 @@ export default class Citas extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('cve_cita')
+      table.increments('cve_cita').primary()
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
