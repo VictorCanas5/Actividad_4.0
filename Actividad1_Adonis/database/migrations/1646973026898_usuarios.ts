@@ -17,7 +17,7 @@ export default class Usuarios extends BaseSchema {
       table.date('fecha_nac').notNullable()
       table.string('correo').unique().notNullable()
       table.string('contraseña').notNullable()
-      table.integer('telefono')
+      table.integer('telefono').notNullable()
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })
