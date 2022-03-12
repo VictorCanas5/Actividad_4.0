@@ -1,6 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Cita from 'App/Models/Cita';
-import Cita from 'App/Models/Cita';
 
 export default class CitasController {
   public async index({}: HttpContextContract) 
@@ -27,7 +26,7 @@ export default class CitasController {
   }
   public async update({params, request, response}: HttpContextContract) 
   {
-    await Cita.query().where('id_categoria', params.id).update(request.all());
+    await Cita.query().where('id', params.id).update(request.all());
     return {
       res: true,
       message: "Cita modificada correctamente"

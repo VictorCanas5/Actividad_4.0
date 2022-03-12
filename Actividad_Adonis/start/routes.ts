@@ -23,3 +23,10 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+//Citas
+Route.get('cita','CitasController.show')
+Route.post('insertar','CitasController.create')
+Route.delete('eliminar/:id','CitasController.destroy')
+Route.put('modificar/:id','CitasController.update')
+
