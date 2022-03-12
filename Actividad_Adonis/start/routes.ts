@@ -25,7 +25,7 @@ Route.get('/', async () => {
 })
 
 //Citas
-Route.get('cita','CitasController.show')
+Route.get('cita','CitasController.show').as('citas')
 Route.post('insertar','CitasController.create')
 Route.delete('eliminar/:id','CitasController.destroy')
 Route.put('modificar/:id','CitasController.update')
