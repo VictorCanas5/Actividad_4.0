@@ -1,1 +1,61 @@
-<p>registrar-cita works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .centro{
+         text-align: center;
+     }
+    </style>
+</head>
+<body>
+    <div class="row jumbotron jumbotronfm">
+        <div class="col cuadrojum">
+            <h1 class="centro">Registro de citas</h1>
+            <br>
+            </div>
+    </div> <br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="">
+                <div id="login">
+                    <div class="titulo">
+                        Llena el formulario para registrarte
+                    </div>
+                    <form id="loginform" action="../Scripts/registroCompleto.php" method="POST">
+                      <div class="row">
+                        <div class="col">
+                        <input type="text" name="nombre" placeholder="Escribe tu nombre" required autofocus>
+                        
+                        <input type="text" placeholder="Escribe tu apellido paterno" name="ap_paterno" required>
+          
+                        <input type="text" placeholder="Escribe tu apellido materno" name="ap_materno" required>
+                      </div>
+                      <div class="col">
+                        <input type="text" placeholder="Escribe tu nombre de usuario" name="usuario" required>
+          
+                        <input type="text" placeholder="Escribe tu correo" name="correo" required>
+          
+                        <input type="password" placeholder="Escribe una contraseña" name="contraseña" required>
+                      </div>
+                        <button type="submit" name="registrar">Siguiente</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        <div class="col-lg-6">
+            <app-calendario></app-calendario> <br><br><br>
+        </div>
+</div>
+         <!-- //columna2-->
+        
+        
+       
+    </div>  
+</body>
+</html>

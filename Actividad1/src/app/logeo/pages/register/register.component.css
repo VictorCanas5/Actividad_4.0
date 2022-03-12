@@ -24,7 +24,7 @@
 #login {
     width: 100%;
     padding: 50px 30px;
-    background-color: rgb(94, 145, 64);
+    background-color: rgb(102, 163, 67);
     
     -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
@@ -90,7 +90,7 @@
 }
 
 #login button:hover {
-    background-color: #56775e;
+    background-color: #4eb969;
     color:#ffffff;
 }
 
@@ -129,7 +129,7 @@
 }
 
 .body-g{
-    background-color: rgb(40, 80, 36);
+    background-color: #2aa13e;
 }
 html, body {
     max-width: 100% !important;

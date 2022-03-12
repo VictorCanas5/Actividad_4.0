@@ -28,7 +28,7 @@ public grabar_localstorage()
 public obtenerLS()
 {
   let nombre= localStorage.getItem("nombre");
-  let persona= JSON.parse( localStorage.getItem("persona"));
+  let persona=  localStorage.getItem("persona");
   
   console.log(nombre);
   console.log(persona);
