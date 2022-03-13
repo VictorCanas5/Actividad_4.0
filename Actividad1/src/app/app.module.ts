@@ -12,6 +12,7 @@ import { ErroresModule } from './errores/errores.module';
 import { LogeoModule } from './logeo/logeo.module';
 //cookies
 import { CookieService } from 'ngx-cookie-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -27,7 +28,8 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     IndexModule,
     ErroresModule,
-    LogeoModule
+    LogeoModule,
+    BrowserAnimationsModule
     
   ],
   providers: [ CookieService],

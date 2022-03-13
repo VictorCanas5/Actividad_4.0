@@ -7,7 +7,14 @@ import { AdminCitasComponent } from './pages/admin-citas/admin-citas.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 
+//cosas de fechas
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FullCalendarModule } from 'primeng/fullcalendar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +24,17 @@ import { FullCalendarModule } from 'primeng/fullcalendar';
     DatePickerComponent
   ],
   imports: [
+    
     CommonModule,
     CitasRoutingModule,
-    FullCalendarModule
+    NgxMatTimepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FullCalendarModule,
+    
+    MatDatepickerModule,
+    MatNativeDateModule,
+    //no poner nada despues de estas dos
   ],
   exports:[
       RegistrarCitaComponent,

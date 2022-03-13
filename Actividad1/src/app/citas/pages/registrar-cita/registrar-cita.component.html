@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <title>Document</title>
     <style>
      .centro{
          text-align: center;
+     }
+     .blanco{
+         color: white;
      }
     </style>
 </head>
@@ -23,26 +28,32 @@
         <div class="col-lg-6">
             <div id="">
                 <div id="login">
-                    <div class="titulo">
+                    <div class="titulo" >
                         Llena el formulario para registrarte
                     </div>
                     <form id="loginform" action="../Scripts/registroCompleto.php" method="POST">
                       <div class="row">
-                        <div class="col">
-                        <input type="text" name="nombre" placeholder="Escribe tu nombre" required autofocus>
-                        
-                        <input type="text" placeholder="Escribe tu apellido paterno" name="ap_paterno" required>
-          
-                        <input type="text" placeholder="Escribe tu apellido materno" name="ap_materno" required>
+                        <div class="col blanco">
+                        <input type="text" name="nombre" placeholder="¿Qué vamos a reparar?" required autofocus>
+                    
+                        <input matInput [matDatepicker]="picker" placeholder="Escoge una fecha">
+                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker> <--Seleccionar
+                            
+                            <br>
+                            <br>
+                            <mat-form-field appearance="outline">
+                                <mat-label class="blanco">Selecciona la hora</mat-label>
+                                <input type="time" matInput name="week" min="09:00" max="18:00">
+                             </mat-form-field>
+
+
+
                       </div>
-                      <div class="col">
-                        <input type="text" placeholder="Escribe tu nombre de usuario" name="usuario" required>
-          
-                        <input type="text" placeholder="Escribe tu correo" name="correo" required>
-          
-                        <input type="password" placeholder="Escribe una contraseña" name="contraseña" required>
-                      </div>
+                      
                         <button type="submit" name="registrar">Siguiente</button>
+                        <p class="blanco">*SOLO CITAS EN RANGO DE UN MES</p>
+                        <p class="blanco">*LOS DETALLES SE ACLARAN POR CORREO</p>
                       </div>
                     </form>
                 </div>
@@ -57,5 +68,6 @@
         
        
     </div>  
+    
 </body>
 </html>

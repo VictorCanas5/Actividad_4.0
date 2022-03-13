@@ -36,7 +36,7 @@ export class CalendarioComponent implements OnInit {
       {
         title : "Evento 1",
         start: new Date(),
-        descripcion: "Evento 1"
+        descripcion: "Ocupao"
       },
       {
         title : "Evento 2",
@@ -46,7 +46,7 @@ export class CalendarioComponent implements OnInit {
       {
         title : "Evento 3",
         start:  new Date(new Date().getTime()+ (86400000*2)),
-        end:  new Date(new Date().getTime()+ (86400000*3)) ,
+       
         descripcion: "Evento 3"
       },
       
