@@ -36,7 +36,7 @@ export default class Usuario extends BaseModel {
   public rol_usuario:number
   
   @column()
-  public recordar_token: string
+  public remember_me_token: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -47,8 +47,8 @@ export default class Usuario extends BaseModel {
 
   @beforeSave()
   public static async hashPassword(user: Usuario) {
-    if (user.$dirty.contrasena) {
-      user.contrasena = await Hash.make(user.contrasena)
+    if (user.$dirty.password) {
+      user.password = await Hash.make(user.password)
     }
   }
 

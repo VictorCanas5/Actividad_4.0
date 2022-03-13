@@ -17,23 +17,20 @@
 | import './routes/customer'
 |
 */
-
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post('login', 'AuthController.login').as('auth.login')
+Route.post('login', async ({ auth, request, response }) => {
+  const email = request.input('email')
+  const password = request.input('password')
 
-
-
-//Citast
-Route.get('/mostrar','CitasController.show')
-Route.post('insertar','CitasController.create').as('insert')
-Route.delete('/eliminar/:cve_cita','CitasController.destroy')
-Route.put('modificar/:id','CitasController.update')
-
-//Usuario
-Route.post('/insertarU','UsuariosController.create')
-Route.get('/mostrarU','UsuariosController.show')
+  try {
+    const token = await auth.use('api').attempt(email, password)
+    return token
+  } catch {
+    return response.badRequest('Invalid credentials')
+  }
+})

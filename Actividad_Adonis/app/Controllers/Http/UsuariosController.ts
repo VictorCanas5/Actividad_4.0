@@ -7,19 +7,17 @@ export default class UsuariosController {
 
     public async create({request, response}: HttpContextContract)
     {
-      const nombre=request.input('nombre')
-      const correo=request.input('correo')
-      const contraseña=request.input('contrasena')
+      const correo=request.input('email')
+      const contraseña=request.input('password')
       const rol=request.input('rol_usuario')
-      const recordar=request.input('recordar_token')
+      const recordar=request.input('remember_me_token')
   
       const usuari=new Usuario()
   
-      usuari.nombre=nombre
       usuari.email=correo
       usuari.password=contraseña
       usuari.rol_usuario=rol
-      usuari.recordar_token=recordar
+      usuari.remember_me_token=recordar
   
       await usuari.save()
       response.json({usuari})
@@ -29,7 +27,4 @@ export default class UsuariosController {
       const users = await Database.query().from('usuarios').select('*')
       return users
     }
-  
-
-
 }
