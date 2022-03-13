@@ -5,7 +5,7 @@ export default class Cotizaciones extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
+      table.increments('id').primary()
       table.string('detalle_concepto',50).notNullable()
       table.float('precio',8,2).notNullable()
       table.enu('tipo_serv',['mantenimiento','reparacion']).notNullable()

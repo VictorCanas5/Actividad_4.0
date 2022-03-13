@@ -3,7 +3,7 @@ import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Cita extends BaseModel {
   @column({ isPrimary: true })
-  public id: number
+  public cve_cita: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -22,4 +22,5 @@ export default class Cita extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
 }

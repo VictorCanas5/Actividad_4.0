@@ -5,7 +5,7 @@ export default class Productos extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('cve_producto')
+      table.increments('cve_producto').primary()
       table.string('nombre',20).notNullable()
       table.integer('existencia').notNullable()
       table.float('precio_unitario',8,2).notNullable
@@ -15,7 +15,6 @@ export default class Productos extends BaseSchema {
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
       table.timestamps()
-
     })
   }
 

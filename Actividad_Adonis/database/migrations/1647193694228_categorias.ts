@@ -1,14 +1,12 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class OrdenCompras extends BaseSchema {
-  protected tableName = 'orden_compras'
+export default class Categorias extends BaseSchema {
+  protected tableName = 'categorias'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('cve_orden_compra')
-      table.date('fecha_pedido').notNullable()
-      table.string('tipo_pago',15).notNullable()
-      table.integer('usuario').unsigned().references('id').inTable('usuarios')
+      table.increments('id_cat').primary()
+      table.string('nombre',20).notNullable()
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

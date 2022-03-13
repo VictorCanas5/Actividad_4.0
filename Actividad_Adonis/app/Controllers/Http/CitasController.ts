@@ -1,4 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Database from '@ioc:Adonis/Lucid/Database';
 import Cita from 'App/Models/Cita';
 
 export default class CitasController {
@@ -21,16 +22,13 @@ export default class CitasController {
     response.json({cita})
   }
 
-  public async show({ response}: HttpContextContract) 
+  public async show({ }: HttpContextContract) 
   {
-    const citas = await Cita.all()
-    response.status(200)
-    response.send({
-      'citas':citas
-    })
+    const citas = await Database.query().from('citas').select('*')
+    return citas
   }
 
-  public async update({params, request, response}: HttpContextContract) 
+  public async update({params, request}: HttpContextContract) 
   {
     await Cita.query().where('id', params.id).update(request.all());
     return {
@@ -41,7 +39,7 @@ export default class CitasController {
 
   public async destroy({ params,response}: HttpContextContract) {
     try {
-      const cita = await Cita.findOrFail(params.id)
+      const cita = await Cita.findOrFail(params.cve_cita)
       const cit_tmp = cita
       cita.delete()
       response.status(200)
@@ -52,8 +50,9 @@ export default class CitasController {
     } catch (cita) {
       response.status(404)
       response.send({
-        'mensaje':'Cita no encontrada'
+        'mensaje':'cita no encontrada'
       })
+
     }
   }
 }

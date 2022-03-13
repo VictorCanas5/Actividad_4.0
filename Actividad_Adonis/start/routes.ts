@@ -24,9 +24,26 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-//Citas
-Route.get('cita','CitasController.show').as('citas')
-Route.post('insertar','CitasController.create')
-Route.delete('eliminar/:id','CitasController.destroy')
+Route.post('/login', async ({ auth, request, response }) => {
+
+  const email = request.input('correo')
+  const password = request.input('contraseña')
+
+  try {
+    const token = await auth.use('api').attempt(email, password)
+    return token
+  } catch {
+    return response.badRequest('Credenciales invalidas')
+  }
+})
+
+
+//Citast
+Route.get('/mostrar','CitasController.show').as('citas')
+Route.post('insertar','CitasController.create').as('insert')
+Route.delete('/eliminar/:cve_cita','CitasController.destroy')
 Route.put('modificar/:id','CitasController.update')
 
+//Usuario
+Route.post('/insertarU','UsuariosController.create').as('insertU')
+Route.get('/mostrarU','UsuariosController.show')

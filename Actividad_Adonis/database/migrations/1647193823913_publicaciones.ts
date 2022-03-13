@@ -5,7 +5,7 @@ export default class Publicaciones extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
+      table.increments('id').primary()
       table.string('titulo_pub').notNullable()
       table.string('imagen').notNullable()
       table.string('categoria').notNullable()
@@ -17,7 +17,6 @@ export default class Publicaciones extends BaseSchema {
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
       table.timestamps()
-
     })
   }
 
