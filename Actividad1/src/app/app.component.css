@@ -60,12 +60,3 @@ margin:0 auto;
 .btn-acceder:hover{
     color: black;
 }
-.body-g{
-    background-color: rgb(40, 80, 36);
-    }
-    body::-webkit-scrollbar{
-        width: 7px;
-    }
-    body::-webkit-scrollbar-thumb{
-        background: gray;
-    }

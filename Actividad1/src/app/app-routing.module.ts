@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LogeoModule } from './logeo/logeo.module';
 
 
 const routes: Routes = [ 
