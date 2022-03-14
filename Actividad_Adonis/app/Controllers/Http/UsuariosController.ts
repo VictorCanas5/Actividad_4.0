@@ -1,4 +1,5 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { Response } from '@adonisjs/core/build/standalone';
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database';
 import Usuario from "App/Models/Usuario"
@@ -27,4 +28,15 @@ export default class UsuariosController {
       const users = await Database.query().from('usuarios').select('*')
       return users
     }
+
+    public async store ({ request, response }) {
+      const userData = request.only(['email', 'password'])
+      const user = await Usuario.create(userData)
+
+       return response.created({
+         status:true,
+         data: user
+       })
+    }
+        
 }
