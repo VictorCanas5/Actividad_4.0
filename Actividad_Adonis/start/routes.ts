@@ -22,7 +22,10 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.post('login', 'AuthController.login').as('auth.login')
 
-Route.resource('usuarios','UsuariosController').apiOnly()
+
+Route.resource('usuarios','UsuariosController')
+.apiOnly()
+.validator(new Map)
 
 
 
