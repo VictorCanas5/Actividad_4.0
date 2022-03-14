@@ -25,9 +25,7 @@ Route.post('login', 'AuthController.login').as('auth.login')
 
 Route.resource('usuarios','UsuariosController')
 .apiOnly()
-.validator(new Map)([
-    ['Usuarios.store'],['StoreUsuarios']
-])
+
 
 
 
@@ -36,6 +34,7 @@ Route.get('/mostrar','CitasController.show')
 Route.post('insertar','CitasController.create').as('insert')
 Route.delete('/eliminar/:cve_cita','CitasController.destroy')
 Route.put('modificar/:id','CitasController.update')
+
 
 //Usuario
 Route.post('/insertarU','UsuariosController.create')
