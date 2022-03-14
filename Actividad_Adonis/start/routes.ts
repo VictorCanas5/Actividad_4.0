@@ -25,7 +25,9 @@ Route.post('login', 'AuthController.login').as('auth.login')
 
 Route.resource('usuarios','UsuariosController')
 .apiOnly()
-.validator(new Map)
+.validator(new Map)([
+    ['Usuarios.store'],['StoreUsuarios']
+])
 
 
 
