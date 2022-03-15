@@ -48,6 +48,6 @@ export default class AuthController {
     await auth.logout()
 
     // redirect to login page
-    return response.redirect().toRoute('auth.login.show')
+    return response.redirect().toRoute('auth.login')
   }
 }

@@ -22,15 +22,15 @@ import Route from '@ioc:Adonis/Core/Route'
 
 //Citast
 Route.get('/mostrar','CitasController.show')
-Route.post('insertar','CitasController.create').as('insert')
+Route.post('insertar','CitasController.create')
 Route.delete('/eliminar/:cve_cita','CitasController.destroy')
 Route.put('modificar/:id','CitasController.update')
 
 
 //Usuario
-Route.post('register', 'AuthController.register').as('auth.register')
-Route.post('login', 'AuthController.login').as('auth.login')
-Route.get('logout', 'AuthController.logout').as('auth.logout')
+Route.post('register', 'AuthController.register')
+Route.post('login', 'AuthController.login')
+Route.get('logout', 'AuthController.logout')
 
 
 Route.get('mostrarU','UsuariosController.show')
