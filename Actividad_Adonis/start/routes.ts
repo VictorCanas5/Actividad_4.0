@@ -20,15 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.post('login', 'AuthController.login').as('auth.login')
-
-
-Route.resource('usuarios','UsuariosController')
-.apiOnly()
-
-
-
-
 //Citast
 Route.get('/mostrar','CitasController.show')
 Route.post('insertar','CitasController.create').as('insert')
@@ -37,5 +28,9 @@ Route.put('modificar/:id','CitasController.update')
 
 
 //Usuario
-Route.post('/insertarU','UsuariosController.create')
-Route.get('/mostrarU','UsuariosController.show')
+Route.post('register', 'AuthController.register').as('auth.register')
+Route.post('login', 'AuthController.login').as('auth.login')
+Route.get('logout', 'AuthController.logout').as('auth.logout')
+
+
+Route.get('mostrarU','UsuariosController.show')

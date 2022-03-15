@@ -1,14 +1,14 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
-import Usuario from "App/Models/Usuario";
+import usuarios from "App/Models/usuarios";
 
 export default class AuthController {
   public async register({ request, response, auth }: HttpContextContract) {
     // create validation schema for expected user form data
     const userSchema = schema.create({
-      username: schema.string({ trim: true }, [rules.unique({ table: 'users', column: 'username', caseInsensitive: true })]),
-      email: schema.string({ trim: true }, [rules.email(), rules.unique({ table: 'users', column: 'email', caseInsensitive: true })]),
+      username: schema.string({ trim: true }, [rules.unique({ table: 'usuarios', column: 'username', caseInsensitive: true })]),
+      email: schema.string({ trim: true }, [rules.email(), rules.unique({ table: 'usuarios', column: 'email', caseInsensitive: true })]),
       password: schema.string({}, [rules.minLength(8)])
     })
 
@@ -17,7 +17,7 @@ export default class AuthController {
     const data = await request.validate({ schema: userSchema })
 
     // create a user record with the validated data
-    const user = await Usuario.create(data)
+    const user = await usuarios.create(data)
 
     // login the user using the user model record
     await auth.login(user)
@@ -35,7 +35,7 @@ export default class AuthController {
       await auth.attempt(uid, password)
     } catch (error) {
       // if login fails, return vague form message and redirect back
-      session.flash('form', 'Your username, email, or password is incorrect')
+      session.flash('form', 'Tu usuaio o contraseña es invalida')
       return response.redirect().back()
     }
 
