@@ -10,7 +10,7 @@ export default class CategoriasController {
       await Categoria.create(input);
       return response.status(200).send({
         res: true,
-        message: "categoria creada correctamente"
+        message: "pene"
       });
     }
   
